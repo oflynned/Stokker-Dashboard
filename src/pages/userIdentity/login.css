@@ -1,0 +1,11 @@
+.login {
+
+}
+
+.login .click-me {
+    padding: 16px;
+    height: fit-content;
+    width: fit-content;
+    background: red;
+    color: white;
+}
