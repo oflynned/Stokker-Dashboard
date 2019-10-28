@@ -1,12 +1,13 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { isSessionValid } from '../../common/session/localCache';
 
-const AuthenticatedRoute = ({ component: Component, auth, ...rest }) => {
+const AuthenticatedRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
       render={props => {
-        if (auth.hasVerifiedSession) {
+        if (isSessionValid()) {
           return <Component {...props} />;
         }
 
