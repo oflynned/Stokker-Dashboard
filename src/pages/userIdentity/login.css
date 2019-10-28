@@ -1,11 +1,31 @@
 .login {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login .login-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 512px;
+    height: fit-content;
+    padding: 32px;
+}
+
+.login .login-content h1 {
 
 }
 
-.login .click-me {
-    padding: 16px;
-    height: fit-content;
-    width: fit-content;
-    background: red;
-    color: white;
+.login .login-content .field {
+    width: 512px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background: white;
+}
+
+.login .login-content button {
+    padding: 0 32px;
+    margin: 16px auto 0;
 }
