@@ -17,7 +17,6 @@ class Checkpoint extends Component {
   async checkRemoteSessionValidity() {
     try {
       const session = await fetchApi('GET', authEndpoint);
-      console.log(session)
       // TODO recache the expiry time
       this.setState({
         isLoading: false,

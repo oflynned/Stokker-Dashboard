@@ -24,7 +24,7 @@ export const saveKey = (key, value) => {
 
 export const getKey = (key) => {
   const value = ls.get(prefix + key);
-  if (!value)
+  if (value === 0)
     throw new Error('missing_key');
 
   try {
@@ -39,5 +39,5 @@ export const deleteKey = (key) => {
 };
 
 export const clearKeys = () => {
-  [KEY_SESSION, KEY_ID, KEY_NAME].map(key => deleteKey(key));
+  [KEY_SESSION, KEY_ID, KEY_NAME, KEY_SESSION_EXPIRY].map(key => deleteKey(key));
 };

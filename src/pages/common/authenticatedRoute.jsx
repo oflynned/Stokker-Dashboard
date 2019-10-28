@@ -7,11 +7,12 @@ const AuthenticatedRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={props => {
-        if (isSessionValid()) {
+        try {
+          isSessionValid();
           return <Component {...props} />;
+        } catch (err) {
+          return <Redirect to="/login"/>;
         }
-
-        return <Redirect to="/login"/>;
       }}
     />
   );
