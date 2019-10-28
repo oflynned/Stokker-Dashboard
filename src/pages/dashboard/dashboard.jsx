@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 
-import './stockLevels.css';
+import './dashboard.css';
 
-class StockLevels extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>Stock levels</div>
@@ -11,4 +11,4 @@ class StockLevels extends Component {
   }
 }
 
-export default withRouter(StockLevels);
+export default withRouter(Dashboard);
