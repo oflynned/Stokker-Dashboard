@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import '@material/react-button/dist/button.css';
+import '@material/react-text-field/dist/text-field.css';
+
 import Login from './pages/userIdentity/login';
-import StockLevels from './pages/dashboard/stockLevels';
+import Dashboard from './pages/dashboard/dashboard';
 import AuthenticatedRoute from './pages/common/authenticatedRoute';
 
 import './App.css';
+import Checkpoint from './pages/userIdentity/checkpoint';
 
 class App extends Component {
   render() {
@@ -13,8 +17,9 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route exact path={['/', '/login']} component={Login}/>
-            <AuthenticatedRoute exact path={'/stock'} component={StockLevels}/>
+            <Route exact path={'/'} component={Checkpoint}/>
+            <Route exact path={'/login'} component={Login}/>
+            <AuthenticatedRoute exact path={'/dashboard'} component={Dashboard}/>
           </Switch>
         </div>
       </BrowserRouter>
