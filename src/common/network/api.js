@@ -1,16 +1,14 @@
-// import commonConfig from "../config/commonConfig";
-
 import axios from 'axios';
 import { getLocalSession, hasSessionLocally } from '../session/sessionHelper';
 import { authEndpoint } from './endpoints';
 
-export const fetchNewAccount = async (data, email, password) => {
+export const fetchAccount = async (email, password) => {
   return axios({
     method: 'POST',
     url: authEndpoint,
-    data,
+    data: {},
     headers: {
-      authorization: `Basic ${btoa(email)}:${btoa(password)}`
+      authorization: `Basic ${btoa(email + ':' + password)}`
     }
   });
 };

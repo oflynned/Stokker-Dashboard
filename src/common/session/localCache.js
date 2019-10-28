@@ -6,10 +6,13 @@ const prefix = 'stacket_';
 
 // session related keys
 export const KEY_SESSION = 'session';
+export const KEY_SESSION_EXPIRY = 'expiryTime';
 
 // user related keys
 export const KEY_ID = '_id';
 export const KEY_NAME = 'name';
+
+export const isSessionValid = () => Date.now() < getKey(KEY_SESSION_EXPIRY);
 
 export const saveKey = (key, value) => {
   if (Object.getPrototypeOf(value) === Object.prototype) {
