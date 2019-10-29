@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { fetchAccount } from '../../common/network/api';
 
-import Button from '@material/react-button';
-import TextField, { Input } from '@material/react-text-field';
+import { Button } from '@rmwc/button';
+import { TextField } from '@rmwc/textfield';
 
 import { Redirect } from 'react-router';
 import {
@@ -42,18 +42,15 @@ class Login extends Component {
         <div className={'login-content'}>
           <h1>Login to Stokker</h1>
 
-          <TextField className="field" label="Email">
-            <Input
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.currentTarget.value })}/>
-          </TextField>
+          <TextField className="field"
+                     label="Email"
+                     type={'email'}
+                     onChange={(e) => this.setState({ email: e.currentTarget.value })}/>
 
-          <TextField className="field" label="Password">
-            <Input
-              type={'password'}
-              value={this.state.password}
-              onChange={(e) => this.setState({ password: e.currentTarget.value })}/>
-          </TextField>
+          <TextField className="field"
+                     label="Password"
+                     type={'password'}
+                     onChange={(e) => this.setState({ password: e.currentTarget.value })}/>
 
           <Button raised onClick={() => this.onButtonClick()}>
             Login
