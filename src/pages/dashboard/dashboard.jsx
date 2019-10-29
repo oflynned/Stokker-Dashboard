@@ -18,7 +18,7 @@ import { IconButton } from '@rmwc/icon-button';
 import { ReactComponent as DeleteIcon } from '../../assets/images/cancel-24px.svg';
 
 import {
-  findUnarchivedItemsMutation,
+  findUnarchivedItemsQuery,
   markItemUsedMutation,
   archiveItemMutation
 } from '../../common/queries/items';
@@ -28,7 +28,7 @@ import './dashboard.css';
 function Dashboard() {
   const [markUsed] = useMutation(markItemUsedMutation);
   const [archiveItem] = useMutation(archiveItemMutation);
-  const { loading, error, data, refetch } = useQuery(findUnarchivedItemsMutation);
+  const { loading, error, data, refetch } = useQuery(findUnarchivedItemsQuery);
 
   let component;
   if (loading) component = <div>Loading...</div>;
