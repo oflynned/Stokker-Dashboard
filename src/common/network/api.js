@@ -24,4 +24,4 @@ export const fetchApi = async (method, url, data = {}) => {
   return axios(payload);
 };
 
-// const fetchGraphQL = async query => fetch();
+const fetchGraphQL = async query => fetch();
