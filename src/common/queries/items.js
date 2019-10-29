@@ -1,22 +1,33 @@
 import gql from 'graphql-tag';
 
-export const findUnarchivedItemsMutation = gql`
+export const findUnarchivedItemsQuery = gql`
     query FindUnarchivedItems {
         findUnarchivedItems {
             _id
             name
-            quantity,
+            quantity
             used
         }
     }
 `;
 
-export const findUnusedItemsMutation = gql`
+export const findUnusedItemsQuery = gql`
     query FindUnusedItems {
         findUnusedItems {
             _id
             name
-            quantity,
+            quantity
+            used
+        }
+    }
+`;
+
+export const onItemDataChangedSubscription = gql`
+    subscription OnItemDataChanged {
+        onItemDataChanged {
+            _id
+            name
+            quantity
             used
         }
     }
