@@ -1,13 +1,16 @@
-.development-board {
+.dashboard {
+    width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
-.development-board .screen-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 84px;
-    min-height: 100vh;
-    width: calc(100vw - 84px);
-    background-color: #F8F9FA;
+.dashboard .stock-content{
+    margin-top: 128px;
+    width: 100vw;
+}
+
+.dashboard td div.mdc-checkbox--upgraded {
+    margin: auto;
 }
